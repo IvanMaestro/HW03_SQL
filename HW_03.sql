@@ -56,7 +56,7 @@ ORDER BY salary DESC
 LIMIT 5;
 
 -- 3. Подсчитать суммарную зарплату(salary) по каждой специальности (speciality)
-SELECT post, SUM(salary) total_post_salary 
+SELECT post, SUM(salary) AS total_post_salary
 FROM staff
 GROUP BY post;
 
@@ -65,8 +65,8 @@ SELECT COUNT(*) 'Кол-во рабочих 24-49 лет' FROM staff
 WHERE post = 'Рабочий' AND age BETWEEN 24 AND 49;
 
 -- 5. Найти количество специальностей
-SELECT 
-COUNT(DISTINCT post) 
+SELECT
+COUNT(DISTINCT post) AS
 'Количество специальностей' 
 FROM staff;
 
